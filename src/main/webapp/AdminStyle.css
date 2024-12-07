@@ -1,0 +1,215 @@
+/* General Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #F0F4FF;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 320px;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: #161a2d;
+  padding: 25px 20px;
+  transition: all 0.4s ease;
+}
+
+/* Sidebar Header */
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-header img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+}
+
+/* Sidebar Links */
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+.sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: #161a2d;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-icon {
+  margin-left: auto;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #161a2d; /* Ensure the dropdown background matches */
+    border-radius: 4px; /* Optional: Round corners */
+  }
+  
+  .dropdown-menu.active {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    padding: 0; /* Reset padding for list items */
+  }
+  
+  .dropdown-menu li a {
+    color: #fff;
+    padding: 10px 20px; /* Space around the link */
+    text-decoration: none;
+    display: flex; /* Flex to align icon and text */
+    align-items: center; /* Center the icon vertically */
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f4ff; /* Highlight background on hover */
+    color: #161a2d; /* Text color on hover */
+  }
+  
+
+/* User Account Styling */
+.user-account {
+  display: flex;
+  justify-content: flex-end;
+  background: #7393B3;
+  padding: 12px 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.user-account ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.user-account ul li a {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.2s ease;
+}
+
+.user-account ul li a:hover {
+  color: #fff;
+}
+
+
+/* Card Layout Styling */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-left: 320px; /* Adjust according to your sidebar width */
+  margin-top: 40px; /* Add space from the top (navbar) */
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 48px;
+  color: #4caf50;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.card-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.recent-activities {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.recent-activities li {
+  margin-bottom: 5px;
+}
