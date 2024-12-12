@@ -29,6 +29,10 @@ public interface ApplicationsRepository extends JpaRepository<Applications, Inte
 	
 	@Query("select a from Applications a where a.sid=?1 and a.jid=?2")
 	public Applications checkapplication(int sid, int jid);
+
+	@Query("select count(*) from Applications a where a.status = ?1")
+	public long statuscount(String status);
+	
 	
 	
 	
