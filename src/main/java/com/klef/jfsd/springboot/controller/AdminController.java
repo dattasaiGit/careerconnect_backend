@@ -118,6 +118,44 @@ public class AdminController
 		return adminService.permanent(id);
 	}
 	
+	@GetMapping("studentcount")
+	public long studentscount()
+	{
+		return adminService.studentcount();
+	}
+	
+	@GetMapping("recruitercount")
+	public long recruitercount()
+	{
+		return adminService.recruitercount();
+	}
+	
+	@GetMapping("jobcount")
+	public long jobscount()
+	{
+		return adminService.jobcount();
+	}
+	
+	@GetMapping("placedcount")
+	public long placedcount()
+	{
+		return adminService.filteredapplicationcount("Accepted");
+	}
+	
+	@GetMapping("pendingcount")
+	public long pendingcount()
+	{
+		return adminService.filteredapplicationcount("Applied");
+	}
+	
+	@GetMapping("applicationscount")
+	public long applicationsscount()
+	{
+		return adminService.applicationscount();
+	}
+	
+	
+	
 	
 	
 	
