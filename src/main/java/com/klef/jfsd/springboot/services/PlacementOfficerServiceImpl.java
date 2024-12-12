@@ -10,10 +10,12 @@ import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.PlacementOfficer;
 import com.klef.jfsd.springboot.models.Recruiter;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 import com.klef.jfsd.springboot.repository.JobRepository;
 import com.klef.jfsd.springboot.repository.PhotoRepository;
 import com.klef.jfsd.springboot.repository.PlacementOfficerRepository;
 import com.klef.jfsd.springboot.repository.StudentRepository;
+import com.klef.jfsd.springboot.repository.TrainingSessionsRepository;
 
 @Service
 public class PlacementOfficerServiceImpl implements PlacementOfficerService
@@ -29,6 +31,9 @@ public class PlacementOfficerServiceImpl implements PlacementOfficerService
 	
 	@Autowired
 	private PhotoRepository photoRepository;
+
+	@Autowired
+	private TrainingSessionsRepository  sessionsRepository;
 	
 	@Override
 	public String addStudent(Student s) 
@@ -95,6 +100,22 @@ public class PlacementOfficerServiceImpl implements PlacementOfficerService
 	  public Photo viewimage(int id) {
 	    return photoRepository.findById(id).get();
 	  }
+	@Override
+	public String addsessions(TrainingSessions s) {
+		sessionsRepository.save(s);
+		return "Training Session Added Successfully";
+	}
+
+	@Override
+	public List<TrainingSessions> viewsessions() {
+		return sessionsRepository.findAll();
+	}
+
+	@Override
+	public String deletesessions(String id) {
+		sessionsRepository.deleteById(id);
+		return "Session Deleted Successfully";
+	}
 
 }
 
