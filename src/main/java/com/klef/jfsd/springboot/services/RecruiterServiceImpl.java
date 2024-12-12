@@ -72,14 +72,7 @@ public class RecruiterServiceImpl implements RecruiterService
   public Recruiter recruiterlogin(String email, String password) 
   {
     Recruiter r = recruiterRepository.recruiterlogin(email, password);
-    if(r.getStatus().equals("Accepted"))
-    {
-    	return r;
-    }
-    else
-    {
-    	return null;
-    }
+    return r;
   }
 
 @Override
