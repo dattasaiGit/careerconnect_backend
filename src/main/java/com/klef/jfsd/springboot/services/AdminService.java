@@ -24,5 +24,11 @@ public interface AdminService
 	public List<DeletedUsers> getDeletedUsers();
 	public String undodelete(int id);
 	public String permanent(int id);
+	public long studentcount();
+	public long recruitercount();
+	public long applicationscount();
+	public long jobcount();
+	public long filteredapplicationcount(String status);
+	
 	
 }
