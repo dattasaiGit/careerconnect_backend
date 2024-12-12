@@ -7,6 +7,7 @@ import com.klef.jfsd.springboot.models.Job;
 import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.Resume;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 
 public interface StudentService 
 {
@@ -22,5 +23,7 @@ public interface StudentService
 	public Resume viewResumeById(int id);
 	public Student getStudentbyid(int id);
 	public String addimage(Photo p);
+	public TrainingSessions viewsession(String id);
+	public List<TrainingSessions> viewallsessions();
     public Photo viewimage(int id);
 }
