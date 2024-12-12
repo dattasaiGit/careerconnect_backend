@@ -17,6 +17,8 @@ import com.klef.jfsd.springboot.repository.DeletedUsersRepository;
 import com.klef.jfsd.springboot.repository.PlacementOfficerRepository;
 import com.klef.jfsd.springboot.repository.RecruiterRepository;
 import com.klef.jfsd.springboot.repository.StudentRepository;
+import com.klef.jfsd.springboot.repository.ApplicationsRepository;
+import com.klef.jfsd.springboot.repository.JobRepository;
 
 @Service
 public class AdminServiceImpl implements AdminService
@@ -32,6 +34,10 @@ public class AdminServiceImpl implements AdminService
 	private StudentRepository studentRepository;
 	@Autowired
 	private DeletedUsersRepository deleRepository;
+	@Autowired
+	private ApplicationsRepository applicationsRepository;
+	@Autowired
+	private JobRepository jobRepository;
 	
 	@Override
 	public List<Student> viewAllStudents()
@@ -176,6 +182,33 @@ public class AdminServiceImpl implements AdminService
 		
 		return "User Permanently Deleted";
 	}
+
+	@Override
+	public long studentcount() {
+		return studentRepository.count();
+	}
+
+	@Override
+	public long recruitercount() {
+		return recruiterRepository.count();
+	}
+
+	@Override
+	public long applicationscount() {
+		return applicationsRepository.count();
+	}
+
+	@Override
+	public long filteredapplicationcount(String status) {
+		return applicationsRepository.statuscount(status);
+		}
+
+	@Override
+	public long jobcount() {
+		return jobRepository.count();
+	}
+	
+	
 	
 	
 	
