@@ -1,7 +1,7 @@
 package com.klef.jfsd.springboot.controller;
 
 import java.sql.Blob;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.PlacementOfficer;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 import com.klef.jfsd.springboot.services.PlacementOfficerService;
 
 import jakarta.mail.internet.MimeMessage;
@@ -163,6 +164,25 @@ public class PlacementOfficerController
 	      
 	    // Response Body, HTTP Status Code, Headers
 	    }
+
+
+	        @PostMapping("addsession")
+		public String addsession(@RequestBody TrainingSessions s)
+		{
+			return placementofficerService.addsessions(s);
+		}
+		
+		@GetMapping("viewallsessions")
+		public List<TrainingSessions> viewallsessions()
+		{
+			return placementofficerService.viewsessions();
+		}
+		
+		@DeleteMapping("deletesessions")
+		public String deletesession(@RequestParam String id)
+		{
+			return placementofficerService.deletesessions(id);
+		}
 	 
 	 
 	
