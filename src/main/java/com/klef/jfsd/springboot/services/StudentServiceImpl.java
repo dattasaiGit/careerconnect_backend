@@ -10,11 +10,13 @@ import com.klef.jfsd.springboot.models.Job;
 import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.Resume;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 import com.klef.jfsd.springboot.repository.ApplicationsRepository;
 import com.klef.jfsd.springboot.repository.JobRepository;
 import com.klef.jfsd.springboot.repository.PhotoRepository;
 import com.klef.jfsd.springboot.repository.ResumeRepository;
 import com.klef.jfsd.springboot.repository.StudentRepository;
+import com.klef.jfsd.springboot.repository.TrainingSessionsRepository;
 
 @Service
 public class StudentServiceImpl implements StudentService
@@ -33,6 +35,9 @@ public class StudentServiceImpl implements StudentService
 	
 	@Autowired
 	private PhotoRepository photoRepository;
+
+	@Autowired
+	private TrainingSessionsRepository sessionsRepository;
 	
 	@Override
 	public List<Job> viewAllJobs() 
@@ -122,5 +127,15 @@ public class StudentServiceImpl implements StudentService
 	  public Photo viewimage(int id) {
 	    return photoRepository.findById(id).get();
 	  }
+
+	@Override
+public TrainingSessions viewsession(String id) {
+	return sessionsRepository.findById(id).get();
+}
+
+@Override
+public List<TrainingSessions> viewallsessions() {
+	return sessionsRepository.findAll();
+}
 
 }
