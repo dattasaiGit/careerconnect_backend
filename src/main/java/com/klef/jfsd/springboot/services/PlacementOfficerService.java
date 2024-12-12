@@ -7,6 +7,7 @@ import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.PlacementOfficer;
 import com.klef.jfsd.springboot.models.Recruiter;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 
 public interface PlacementOfficerService 
 {
@@ -19,4 +20,7 @@ public interface PlacementOfficerService
 	public PlacementOfficer getOfficer(int id);
 	public String addimage(Photo p);
 	public Photo viewimage(int id);
+	public String addsessions(TrainingSessions s);
+	public List<TrainingSessions> viewsessions();
+	public String deletesessions(String id);
 }
