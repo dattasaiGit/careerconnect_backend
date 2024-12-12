@@ -31,6 +31,7 @@ import com.klef.jfsd.springboot.models.Job;
 import com.klef.jfsd.springboot.models.Photo;
 import com.klef.jfsd.springboot.models.Resume;
 import com.klef.jfsd.springboot.models.Student;
+import com.klef.jfsd.springboot.models.TrainingSessions;
 import com.klef.jfsd.springboot.services.StudentService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -169,6 +170,20 @@ public class StudentController
 	                           .contentType(MediaType.APPLICATION_PDF)  
 	                           .body(pdfBytes);  
 	  }
+
+
+	
+	@GetMapping("viewallsessions")
+	public List<TrainingSessions> viewallsessions()
+	{
+		return studentservice.viewallsessions();
+	}
+	
+	@GetMapping("viewsession")
+	public TrainingSessions viewsession(@RequestParam String id)
+	{
+		return studentservice.viewsession(id);
+	}
 	
 	
 }
